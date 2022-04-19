@@ -39,11 +39,6 @@ console.log(`lessThan100(100, 10) === false : ${lessThan100(100, 10) === false}`
 // and a third parameter called middle_name which is optional.
 // The function should return a string with the first, middle and last names
 function getFormattedName(first, last, middle,) {
-    // if (!middle){
-    //     return first + ' ' + last;
-    // } else {
-    //     return first + ' ' + middle + ' ' + last;
-    // }
     if (!middle){
         return `${first} ${last}`;
     } else {
@@ -76,8 +71,7 @@ function daysInMonth(month, year = 2022) {
     if (month > 12 || month < 1){
         return 'Please pick a number between 1 and 12';
     }
-    let leapYear = year / 4;
-    if (month === 2 && Number.isInteger(leapYear)){
+    if (month === 2 && Number.isInteger(year / 4)){
         return 28;
     }
     const monthArray = [31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
