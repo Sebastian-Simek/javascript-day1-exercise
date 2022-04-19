@@ -6,8 +6,8 @@
 // a number of minutes as an argument and returns
 // the number of seconds
 
-function convertToSeconds(num1) {
-    return num1 * 60;
+function convertToSeconds(minutes) {
+    return minutes * 60;
 }
 
 console.log(`convertToSeconds(10) === 600 : ${convertToSeconds(10) === 600}`);
@@ -38,7 +38,12 @@ console.log(`lessThan100(100, 10) === false : ${lessThan100(100, 10) === false}`
 // that accepts a first_name and last_name as required parameters
 // and a third parameter called middle_name which is optional.
 // The function should return a string with the first, middle and last names
-function getFormattedName() {}
+function getFormattedName(first, last, middle,) {
+    if (!middle){
+        return first + ' ' + last;} else {
+        return first + ' ' + middle + ' ' + last;}
+    
+}
 console.log(
     `getFormattedName('Ruth', 'Ginsburg') === 'Ruth Ginsburg': ${
         getFormattedName('Ruth', 'Ginsburg') === 'Ruth Ginsburg'
@@ -60,7 +65,22 @@ console.log(
 //    that checks if the year is a leap year, and returns the correct
 //    number of days for Feb. The default value for the year should be
 //    the current year
-function daysInMonth() {}
+function daysInMonth(month) {
+    if (month > 12 || month < 1){
+        return 'Please pick a number between 1 and 12'
+    }
+    const monthArray = [31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+    
+    // return monthArray [month - 1];
+    for (let monthIndex = 0; monthIndex < monthArray.length; monthIndex++)
+        if (monthIndex + 1 === month) { 
+
+            return monthArray[monthIndex]; 
+        }
+}
+
+
+ 
 console.log(`daysInMonth(2) === 29: ${daysInMonth(2) === 29}`);
 console.log(`daysInMonth(3) === 31: ${daysInMonth(3) === 31}`);
 console.log(`daysInMonth(11) === 30: ${daysInMonth(11) === 30}`);
