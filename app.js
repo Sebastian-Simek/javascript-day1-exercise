@@ -104,4 +104,5 @@ function isPalindrome(x) {
         return 'this is a palindrome';
     }   
 }
-
+// eslint-disable-next-line no-console
+console.log(isPalindrome('bob'));
