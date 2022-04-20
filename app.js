@@ -46,11 +46,13 @@ function getFormattedName(first, last, middle,) {
     }
 }
 
+// eslint-disable-next-line no-console
 console.log(
     `getFormattedName('Ruth', 'Ginsburg') === 'Ruth Ginsburg': ${
         getFormattedName('Ruth', 'Ginsburg') === 'Ruth Ginsburg'
     }`
 );
+// eslint-disable-next-line no-console
 console.log(
     `getFormattedName('Ruth', 'Ginsburg', 'Bader') === 'Ruth Bader Ginsburg': ${
         getFormattedName('Ruth', 'Ginsburg', 'Bader') === 'Ruth Bader Ginsburg'
@@ -92,17 +94,21 @@ console.log(`daysInMonth(11) === 30: ${daysInMonth(11) === 30}`);
 // - [Numerical Palindrome](https://www.codewars.com/kata/58ba6fece3614ba7c200017f)
 // - [Disemvowel Trolls](https://www.codewars.com/kata/52fba66badcd10859f00097e)
 
-function isPalindrome(x) {         
+function isPalindrome(word) {
     
-    let array1 = Array.from(x);    
-    let array2 = array1.reverse();
-    let array3 = Array.from(x);
-    if (array1.toString() !== array3.toString())
+    const lowerCaseWord = word.toLowerCase();         
+    const wordArray = Array.from(lowerCaseWord);    
+    wordArray.reverse();
+    const reversWord = wordArray.join('');
+    
+    if (reversWord !== lowerCaseWord)
     { 
         return 'this is a not palindrome';
     } else {
         return 'this is a palindrome';
     }   
 }
-// eslint-disable-next-line no-console
-console.log(isPalindrome('bob'));
+
+console.log(isPalindrome('Toot'));
+
+
