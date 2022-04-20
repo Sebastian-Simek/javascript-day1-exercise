@@ -99,16 +99,36 @@ function isPalindrome(word) {
     const lowerCaseWord = word.toLowerCase();         
     const wordArray = Array.from(lowerCaseWord);    
     wordArray.reverse();
-    const reversWord = wordArray.join('');
+    const reverseWord = wordArray.join('');
     
-    if (reversWord !== lowerCaseWord)
+    if (reverseWord !== lowerCaseWord)
     { 
         return 'this is a not palindrome';
     } else {
         return 'this is a palindrome';
     }   
 }
+// I can refactor like this: 
+function isPalindrome1(word){
+    const lowerCaseWord = word.toLowerCase();
+    const reverseWord = lowerCaseWord.split('').reverse().join('');
+    if (reverseWord === lowerCaseWord){
+        return true;
+    } else {
+        false;
+    }
+}
 
-console.log(isPalindrome('Toot'));
 
+function solution(str){
+    const stringArray = Array.from(str);
+    stringArray.reverse();
+    return stringArray.join('');
+    
+}
+// I can refactor the function like this:
+function solution1(str){
+    return str.split('').reverse().join('');
+}
 
+console.log(isPalindrome('hi'), isPalindrome1('by'), solution('see') solution1('ya'));
