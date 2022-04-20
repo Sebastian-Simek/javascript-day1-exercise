@@ -16,7 +16,7 @@ console.log(`convertToSeconds(10) === 600 : ${convertToSeconds(10) === 600}`);
 // Write a function called areaOfTriangle that takes in the base and height
 // of a triangle and returns its area
 function areaOfTriangle(num1, num2) {
-    return num1 * num2 / 2;  
+    return (num1 * num2) / 2;  
 }
 console.log(`areaOfTriangle(5, 10) === 25 : ${areaOfTriangle(5, 10) === 25}`);
 
@@ -79,8 +79,6 @@ function daysInMonth(month, year = 2022) {
     return monthArray [month - 1];
 }
 
-
- 
 console.log(`daysInMonth(2) === 29: ${daysInMonth(2) === 29}`);
 console.log(`daysInMonth(3) === 31: ${daysInMonth(3) === 31}`);
 console.log(`daysInMonth(11) === 30: ${daysInMonth(11) === 30}`);
@@ -93,3 +91,17 @@ console.log(`daysInMonth(11) === 30: ${daysInMonth(11) === 30}`);
 // - [Is it a Palindrome?](https://www.codewars.com/kata/57a1fd2ce298a731b20006a4)
 // - [Numerical Palindrome](https://www.codewars.com/kata/58ba6fece3614ba7c200017f)
 // - [Disemvowel Trolls](https://www.codewars.com/kata/52fba66badcd10859f00097e)
+
+function isPalindrome(x) {         
+    
+    let array1 = Array.from(x);    
+    let array2 = array1.reverse();
+    let array3 = Array.from(x);
+    if (array1.toString() !== array3.toString())
+    { 
+        return 'this is a not palindrome';
+    } else {
+        return 'this is a palindrome';
+    }   
+}
+
