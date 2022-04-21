@@ -73,8 +73,8 @@ function daysInMonth(month, year = 2022) {
     if (month > 12 || month < 1){
         return 'Please pick a number between 1 and 12';
     }
-    if (month === 2 && Number.isInteger(year / 4)){
-        return 28;
+    if (month === 2 && Number.isInteger(year / 4)){ //can be written (year % 4 === 0)
+        return 28; 
     }
     const monthArray = [31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
     
@@ -115,7 +115,7 @@ function isPalindrome1(word){
     if (reverseWord === lowerCaseWord){
         return true;
     } else {
-        false;
+        return false;
     }
 }
 
@@ -131,4 +131,20 @@ function solution1(str){
     return str.split('').reverse().join('');
 }
 
-console.log(isPalindrome('hi'), isPalindrome1('by'), solution('see') solution1('ya'));
+console.log(isPalindrome('hi'), isPalindrome1('by'), solution('see'), solution1('ya'), disemvowel('hello world'));
+
+function disemvowel(str) {
+    const stringArray = str.split('');
+    const noVowelArray = [];
+
+    for (let i = 0; i < stringArray.length; i++) {
+        
+        const currentElement = stringArray[i];
+        
+        if (currentElement !== 'a' && currentElement !== 'e' && currentElement !== 'i' && currentElement !== 'o' && currentElement !== 'u') {
+            noVowelArray.push(stringArray[i]);           
+        }        
+    }
+    return noVowelArray.join(' ');
+}
+
